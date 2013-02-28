@@ -31,6 +31,8 @@ group :assets do
   gem 'uglifier', '1.2.3'
   gem 'jquery-ui-rails'
   gem 'twitter-bootstrap-rails'
+  gem "therubyracer"
+  gem "less-rails"
 end
 
 
