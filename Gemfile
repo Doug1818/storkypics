@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+gem 'twitter-bootstrap-rails'
+gem "therubyracer"
+gem "less-rails"
 gem 'bootstrap-sass', '2.0.0'
+gem 'sass-rails',   '3.2.4'
 gem 'pg', '0.12.2'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -14,8 +18,6 @@ gem 'jquery-rails', '2.1.0'
 gem 'meta_search'
 gem 'mail'
 gem 'figaro'
-#gem "therubyracer"
-#gem "less-rails"
 
 group :development do
   gem 'rspec-rails', '2.9.0'
@@ -28,11 +30,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.4'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'jquery-ui-rails'
-  gem 'twitter-bootstrap-rails'
 end
 
 
