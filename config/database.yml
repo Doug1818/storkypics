@@ -1,0 +1,11 @@
+development: &development
+  adapter: postgresql
+  database: storkypics_development
+
+production:
+  <<: *development
+
+test: &test
+  adapter: postgresql
+  database: storkypics_test
+  min_messages: warning
