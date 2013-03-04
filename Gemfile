@@ -14,6 +14,7 @@ gem 'jquery-rails', '2.1.0'
 gem 'meta_search'
 gem 'mail'
 gem 'figaro'
+gem 'gibbon'
 
 group :development do
   gem 'rspec-rails', '2.9.0'

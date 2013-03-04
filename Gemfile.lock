@@ -81,6 +81,9 @@ GEM
     ffi (1.4.0)
     figaro (0.6.1)
       rails (>= 3, < 5)
+    gibbon (0.4.4)
+      httparty
+      multi_json
     guard (1.6.2)
       listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
@@ -101,6 +104,9 @@ GEM
     heroku-api (0.3.8)
       excon (~> 0.16.10)
     hike (1.2.1)
+    httparty (0.10.2)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.3)
     journey (1.0.4)
     jquery-rails (2.1.0)
@@ -140,6 +146,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.21)
     multi_json (1.6.1)
+    multi_xml (0.5.3)
     netrc (0.7.7)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
@@ -258,6 +265,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.4.0)
   faker (= 1.0.1)
   figaro
+  gibbon
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
   jquery-rails (= 2.1.0)
