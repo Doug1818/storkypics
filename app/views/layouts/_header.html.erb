@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-			<%= link_to "Storkypics", root_path, id: "logo" %>
+			<%= link_to image_tag("storkypics-logo-small.png"), root_path, id: "logo" %>
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
 					<% if 1 == 0 %>
@@ -22,7 +22,7 @@
 				  		</li>
 						</ul>
 			    <% else %>
-			    	<ul class="nav nav-pills">
+			    	<ul class="nav nav-pills" style="position:relative;top:7px;">
 		          <li><%= link_to "About", "#" %></li>
 				  		<li><%= link_to "Sign Up", "#" %></li>
 				  		<li><%= link_to 'Sign In', "#" %></li>
