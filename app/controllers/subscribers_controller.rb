@@ -13,7 +13,7 @@ class SubscribersController < ApplicationController
       return
     end
     @subscriber.save
-    flash[:success] = "Thank you for your interest in Storkypics!"
+    flash[:success] = "Thank you for your interest in Storkypics! We will be in touch soon!"
     redirect_to root_path
   end
 end
