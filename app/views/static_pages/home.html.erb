@@ -18,8 +18,8 @@
 			<%= form_for @subscriber do |f| %>
 			  <div style="margin-left:auto;margin-right:auto;width:100%;">
 			  	<%= render 'shared/error_messages', object: f.object %>
-			    <span><%= f.text_field :first_name, class: "title", style: "width:120px;height:25px;font-size:110%", placeholder: "first name" %></span>
-			    <span><%= f.text_field :last_name, style: "width:120px;height:25px;font-size:110%;margin-right:20px;", placeholder: "last name" %></span>  
+			    <span><%= f.text_field :first_name, style: "width:120px;height:25px;font-size:110%", placeholder: "first name" %></span>
+			    <span><%= f.text_field :last_name, style: "width:120px;height:25px;font-size:110%;margin-right:20px;", placeholder: "last name" %></span>
 			    <span><%= f.text_field :email, style: "margin-right:20px;height:25px;font-size:110%", placeholder: "email" %></span>
 			    <%= f.submit "SUBMIT", class: "submit" %>
 			  </div>

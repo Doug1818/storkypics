@@ -84,6 +84,7 @@ GEM
     gibbon (0.4.4)
       httparty
       multi_json
+    google-analytics-rails (0.0.4)
     guard (1.6.2)
       listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
@@ -266,6 +267,7 @@ DEPENDENCIES
   faker (= 1.0.1)
   figaro
   gibbon
+  google-analytics-rails
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
   jquery-rails (= 2.1.0)
