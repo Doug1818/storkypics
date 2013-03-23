@@ -1,0 +1,43 @@
+<h2>Add Recipient</h2>
+
+<%= form_for @sendee do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	
+	<div>
+		<span class="span4" style="margin-left:0;">
+	    <div style="float:left;margin-bottom:15px;">
+				<div style="float:left;">
+			    <div class="flabel">First Name</div>
+			    <%= f.text_field :first_name, style: "width:120px;margin-right:17px;font-size:110%;" %>
+				</div>
+				<div style="float:left;">
+			    <div class="flabel">Last Name</div>
+			    <%= f.text_field :last_name, style: "width:120px;font-size:110%;" %>
+				</div>
+	    </div>
+	    <div style="clear:both;">
+				<div class="flabel">Address</div>
+				<%= f.text_field :address, style: "font-size:110%;" %>
+	    </div>
+		</span>
+		<span class="span6">
+	    <div style="float:left;margin-bottom:15px;">
+				<div style="float:left;">
+			    <div class="flabel">City</div>
+			    <%= f.text_field :city, style: "width:120px;margin-right:17px;font-size:110%;" %>
+				</div>
+				<div style="float:left;">
+			    <div class="flabel">State</div>
+			    <%= f.select :state, User::STATES, { include_blank: true }, style: "width:133px;" %>
+				</div>
+	    </div>
+	    <div style="clear:both;">
+				<div class="flabel">Zip Code</div>
+				<%= f.text_field :zip_code, style: "font-size:110%;" %>
+	    </div>
+		</span>
+	</div>
+
+
+	<%= f.submit "Add", class: "submit" %>
+<% end %>

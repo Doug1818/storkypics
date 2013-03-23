@@ -1,0 +1,22 @@
+<h2>Edit Your Little One's Info</h2>
+
+<%= form_for @child do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	
+	<div class="flabel">First Name</div>
+	<%= f.text_field :first_name, style: "font-size:110%;" %>
+
+	<div class="flabel">Last Name</div>
+	<%= f.text_field :last_name, style: "font-size:110%;" %>
+
+	<div class="flabel">Birthday (mm/dd/yyyy)</div>
+	<% if f.object.birthday? %>
+		<%= f.text_field :birthday, style: "font-size:110%;", value: f.object.birthday.strftime("%m/%d/%Y") %>
+	<% else %>
+		<%= f.text_field :birthday, style: "font-size:110%;", placeholder: "mm/dd/yyyy" %>
+	<% end %>
+	
+	<div>
+		<%= f.submit "Update", class: "submit" %>
+	</div>
+<% end %>

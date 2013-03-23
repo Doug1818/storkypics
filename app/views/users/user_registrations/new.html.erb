@@ -7,7 +7,11 @@
   <%= render 'you_fields', f: f %>
 
 	<h2>Your Little One</h2>
-	<%= render 'little_one_fields', f: f %>
+	<div class="row">
+    <%= f.fields_for :children do |builder| %>
+      <%= render 'little_one_fields', f: builder %>
+    <% end %>
+  </div>
 
 	<h2>Your Distribution List</h2>
   <%= f.fields_for :sendees do |builder| %>
