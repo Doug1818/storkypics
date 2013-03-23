@@ -62,8 +62,13 @@ table {
 }
 
 p{
+	/*font-family: 'Georgia';
+	color: #f15e3e;*/
+	color: #696762;
+	line-height: 1.2;
+	font-size: 18px;
 	font-family: 'Georgia';
-	color: #f15e3e;
+	letter-spacing: .1em;
 }
 
 
@@ -170,6 +175,7 @@ body{
 
 #blue-lines{
 	position: relative;
+	right: 20px;
 	height: 5px;
 	margin: 0 auto;
 	width: 851px;
@@ -180,15 +186,6 @@ body{
 
 
 /* Form */
-
-form{	
-	width: 720px;
-	height: 50px;
-	margin: 0 auto;
-	margin-bottom: 25px;
-}
-
-
 
 form p{
 	color: #588c96;
@@ -202,9 +199,8 @@ form input{
 	height: 36px;
 	padding: 0;
 	margin-right: 0px;
+	font-size:110%;
 }
-
-
 
 .submit{
 	width: 129px;
@@ -227,7 +223,7 @@ input{
 	margin-top: 0;
 }
  
-label{
+/*label{
 	z-index: 999;
 	margin: -.1em;
 	margin-top: 0.3em;
@@ -241,7 +237,7 @@ label{
 	height: 24px;
 	text-align: left;
 	position: absolute;
-}
+}*/
 
 
 
@@ -325,7 +321,7 @@ label{
 	-moz-transform:rotate(-90deg); 
 	-ms-transform:rotate(-90deg);
 	-webkit-transform:rotate(-90deg);
-	margin-top: 80px;
+	margin-top: 70px;
 	font-family: 'BebasRegular';
 	font-size: 36px;
 	letter-spacing: .06em;
@@ -415,10 +411,136 @@ label{
 	font-style: italic;
 	margin-left: 0px;
 	padding-top: 12px;
+	text-align: center;
+	position: relative;
+	top: 5px;
+}
+
+/* Doug styles */
+
+h1 {
+	color: #f15e3e;
+	font-family: 'BebasRegular';
+	font-size: 36px;
+	letter-spacing: .06em;
+	margin-top: 30px;
+	margin-bottom: 40px;
 }
 
 
+h2 {
+	font-family: 'BebasRegular';
+	color: #f15e3e;
+	letter-spacing: .12em;
+	line-height: 1.5;
+	font-size: 1.3em;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
 
+h3 {
+	font-family: 'BebasRegular';
+	color: #f15e3e;
+	letter-spacing: .12em;
+	line-height: 1.5;
+	font-size: 1.1em;
+}
+
+.flabel {
+	margin-bottom: 10px;
+	margin-top: 15px;
+	color: #696762;
+	font-family: 'Georgia';
+	font-size: 18px;
+	word-spacing: 2px;
+}
+
+.dfield { 
+	margin:15px 0;
+	border-bottom: 1px solid @grayMediumLight;
+	padding-bottom: 5px;
+	width:100%;
+}
 	
+.center-pic {
+	margin-left: auto;
+	margin-right: auto;
+	width: 233px;
+}
+
+.order-pics-btn {
+	width: 129px;
+	height: 35px;
+	background: #a0c8d4;
+	color: #fff;
+	font-family: 'BebasRegular';
+	line-height: 0;
+	font-size: 20px;
+	letter-spacing: .1em;
+	padding: 5px;
+	margin: 0;
+	border: 0;
+	padding-bottom: 7px;
+	cursor: pointer;
+	margin-top: 5px;
+	position:relative;
+	bottom:120px;
+	left:70px;
+}
+
+.order-pics-btn:hover { text-decoration:none; }
+
+.product-pic {
+	border: 10px solid #faf7e9;
+	margin-top: 20px;
+}
 	
-	
+.product-text ol {
+	list-style: decimal;
+	margin-left: 40px;
+	color: #f15e3e;
+	line-height: 1;
+	font-size: 26px;
+	font-family: 'Georgia';
+	letter-spacing: .1em;
+}
+
+.product-text li {
+	margin-bottom: 50px;
+}
+
+.product-text p {
+	margin: 20px 0;
+	color: #696762;
+	line-height: 1.2;
+	font-size: 18px;
+	font-family: 'Georgia';
+	letter-spacing: .1em;
+}
+
+.pricing-table tr {
+	text-align:left;
+	border-bottom: 3px;
+	border-style: solid;
+	border-color: #faf7e9;
+}
+
+.pricing-table th {
+	padding: 10px;
+	width: 300px;
+	color: #696762;
+	line-height: 1.2;
+	font-size: 18px;
+	font-family: 'Georgia';
+	letter-spacing: .1em;
+}
+
+.pricing-table td {
+	padding: 10px;
+	width: 300px;
+	color: #696762;
+	line-height: 1.2;
+	font-size: 18px;
+	font-family: 'Georgia';
+	letter-spacing: .1em;
+}

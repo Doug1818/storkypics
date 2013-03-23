@@ -1,8 +1,14 @@
 Storkypics::Application.routes.draw do
   
+  devise_for :users, controllers: { registrations: "user_registrations" }
+  resources :users
+  resources :children
+  resources :sendees
+
   resources :subscribers
 
   root to: 'static_pages#home'
+  match '/products',   to: 'static_pages#products'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

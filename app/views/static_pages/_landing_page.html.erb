@@ -1,0 +1,69 @@
+<title>Storkypics</title>
+<div>	
+	<div id="header">
+		<img class="logo" src="/assets/storkypics-logo.png" alt="logo">
+		<div id="site-tagline"><img class="lines" src="/assets/header-lines.png"></div>
+		<div id="blockquote">
+			<p>Share the story <em>of your</em> growing child <em>with your</em> closest friends & relatives... <span style="color: #f15e3e">seamlessly.</span></p></blockquote>
+		</div>
+	</div>
+	
+	<div id="container1">
+	
+		<div id="call-to-action">
+		
+			<p>Have Kids? Take Pics?</p><div id="blue-lines"></div>
+			<h4>Sign up for the launch!<br/><img class="arrow" src="/assets/arrow.png" alt="logo"></h4>
+						
+			<%= form_for @subscriber do |f| %>
+			  <div style="margin-left:auto;margin-right:auto;width:100%;">
+			    <%= f.text_field :first_name, style: "width:120px;height:25px;font-size:110%", placeholder: "first name" %>
+			    <%= f.text_field :last_name, style: "width:120px;height:25px;font-size:110%;margin-right:20px;", placeholder: "last name" %>
+			    <%= f.text_field :email, style: "margin-right:20px;height:25px;font-size:110%", placeholder: "email" %>
+			    <%= f.submit "Submit", class: "submit" %>
+			  </div>
+			<% end %>
+		</div>
+
+		<div id="procedure">
+			<ul>
+				<lh><img src="/assets/number-1.png" width="85px"><br/></lh>
+				<li>Tell us who you want us to<br/> send the photos to &</br> their mailing address<br/><img src="/assets/iphone.jpg"></li>
+				
+				<lh><img src="/assets/number-2.png" width="85px"></lh>
+				<li>Every month, upload up to 5 favorite photos of your kid <br/><br/><img src="/assets/photos.jpg"></li>
+				
+				<lh><img src="/assets/number-3.png" width="85px"><br/></lh>
+				<li>That's it! We do the rest.<br /> Every month, we print &<br/> send these photos to your family.<br/><img src="/assets/mailbox.jpg"></li>
+			</ul>
+		</div>
+
+
+
+		<div id="no-more">
+			<img class="illustration" src="/assets/nomore-illustrations.png">
+			<h3>No More</h3>
+			<div id="forgetful-items">
+			<p>"Send photos to Grandma" on a to-do list</p><br/>
+			<p>Going to the store to print... then remembering to send</p>
+			</div>
+		</div>
+
+		<div id="social">
+			<ul>
+				<li>
+					<a href="https://www.facebook.com/pages/Storkypics/171342926347391?fref=ts" target="_blank">
+					<img src="/assets/facebook.png" id="facebook" alt="facebook"></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/Storkypics" target="_blank">
+					<img src="/assets/twitter.png" id="twitter" alt="twitter"></a>
+				</li>
+				<li>
+					<a href="mailto:contact@storkypics.com" target="_blank">
+					<img src="/assets/email.png" id="email" alt="email"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

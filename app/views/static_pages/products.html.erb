@@ -1,0 +1,75 @@
+<div class="center-pic">
+	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), "#signupModal", "data-toggle" => "modal" %>
+	<%= link_to "Order Pics", "#signupModal", "data-toggle" => "modal", class: "order-pics-btn" %>
+</div>
+
+<div class="modal hide" id="signupModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h2>Launch Coming Soon!</h2>
+  </div>
+  <div class="modal-body product-text">
+    <p>We are just getting ready to launch! You can’t order pictures just yet, but you can Sign Up and start adding friends/family to your distribution list! We will be sure to let you know as soon we fully launch! To get started, click on the Sign Up button below!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
+  </div>
+</div>
+
+<div class="product-text">
+	<h2>How it Works</h2>
+	<p>Storkypics takes the pain and hassle out of sharing photos. Here’s how it works:</p>
+	<ol>
+		<li>
+			<p>Create an account on Storkypics. Tell us a bit about your little one, and the family and friends who want to see your little one growing up (it happens all so quickly!).</p>
+
+			<p>You give us the names and their mailing addresses just once- we will make sure to remember them.</p>
+
+			<p>Don’t forget Grandma, Uncle Jim, Cousin Tim, and close friends! You can even send photos to yourself.</p>
+		</li>
+
+		<li>
+			<p>Upload your favorite photos of your little one to share. We think grandma will love having that photo on her fridge to show off!</p>
+
+			<p>Once a month, we will remind you to upload new photos. Sooner than you think your kid will be all grown up- make sure to capture the memories in between!</p>
+
+			<p>You can upload as little as 1 photo, or as many as 3 photos at a time. </p>
+		</li>
+
+		<li>
+			<p>Once you upload the photos, we will print and ship them, packaged with special Storkypics love!</p>
+
+			<p>Grandma, Uncle Jim, Cousin Tim, and your close friends will now be able to share your special moments, even from far away!</p>
+		</li>
+	</ol>
+
+	<h2>Pricing</h2>
+	<p>The pricing is simple! A flat fee for every person who you will send photos to. The price includes shipping!*</p>
+
+	<table class="pricing-table">
+	    <tr>
+	    	<th>Price per recipient</th>
+	    	<td>$2.99</td>
+	    </tr>
+	    <tr>
+	    	<th>Number of photos</th>
+	    	<td>up to 3 photos</td>
+	    </tr>
+	    <tr>
+	      <th>Size of photos</th>
+	      <td>4 x 6</td>
+	    </tr>
+	    <tr>
+	    	<th>Delivery</th>
+	    	<td>Standard mail</td>
+	    </tr>
+	    <tr>
+	    	<th>Turnaround Time</th>
+	    	<td>7-10 business days</td>
+	    </tr>
+	</table>
+
+	<p>* Shipping included is only within the United States. At this time, we do not do international shipping. 
+</p>
+</div>

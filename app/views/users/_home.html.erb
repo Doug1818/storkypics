@@ -1,0 +1,58 @@
+<h2>Thank you for being part of our early Sign Up!</h2>
+
+<p>Get your distribution list ready to go ahead of our upcomming launch!</p>
+
+<br><br>
+<h2>Your little one</h2>
+<p id="kid"><%= "#{current_user.children.first.first_name} #{current_user.children.first.last_name}, 
+	born #{current_user.children.first.birthday.strftime("%m/%d/%Y")}" %></p>
+<div id="edit_kid" style="display:none">
+	<%= form_for(current_user, url: user_path(current_user), html: { multipart: true }) do |f| %>
+		<%= render 'users/user_registrations/little_one_fields', f: f %>
+		<%= f.submit "Update", class: "submit", style: "margin-top:0px;" %>
+	<% end %>
+</div>
+<div style="margin-top:10px;">
+	<a href="javascript:void(0);" id="togglediv-kid">Edit</a>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$('#togglediv-kid').click(function(){
+		  $('#edit_kid').toggle();
+		  $('#kid').toggle();
+		  $(this).text($(this).text() == 'Edit' ? 'Cancel' : 'Edit');
+		});
+	});
+</script>
+
+<br><br>
+<h2>Your Distribution list</h2>
+<% current_user.sendees.each do |sendee| %>
+	<p id="sendee-<%= sendee.id %>">
+		<%= "#{sendee.first_name} #{sendee.last_name}" %><br>
+		<%= sendee.address %><br>
+		<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>
+	</p>
+	<div id="edit_sendee-<%= sendee.id %>" style="display:none">
+		<%= form_for(current_user, url: user_path(current_user), html: { multipart: true }) do |f| %>
+			<%= f.fields_for :sendees do |builder| %>
+				<%= render 'sendee_fields', f: builder %>
+			<% end %>
+			<%= link_to_add_fields "Add", f, :sendees %>
+			<%= f.submit "Update", class: "submit", style: "margin-top:0px;" %>
+		<% end %>
+	</div>
+	<div style="margin-top:10px;">
+		<a href="javascript:void(0);" id="togglediv-sendee-<%= sendee.id %>">Edit</a>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			$('#togglediv-sendee-<%= sendee.id %>').click(function(){
+			  $('#edit_sendee-<%= sendee.id %>').toggle();
+			  $('#sendee-<%= sendee.id %>').toggle();
+			  $(this).text($(this).text() == 'Edit' ? 'Cancel' : 'Edit');
+			});
+		});
+	</script>
+<% end %>

@@ -67,4 +67,7 @@ Storkypics::Application.configure do
 
   # Google Analytics tracker code
   GA.tracker = "UA-39300896-1"
+
+  # Specify what domain to use for mailer URLs (also required for Devise)
+  config.action_mailer.default_url_options = { host: 'storkypics.com' }
 end

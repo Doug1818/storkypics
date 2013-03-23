@@ -1,0 +1,26 @@
+<div class="row">
+  <%= f.fields_for :children do |builder| %>
+		<div class="span4">
+			<div style="float:left;margin-bottom:15px;">
+				<div style="float:left;">
+					<div class="flabel">First Name</div>
+					<%= builder.text_field :first_name, style: "width:120px;margin-right:17px;font-size:110%;" %>
+				</div>
+				<div style="float:left;">
+					<div class="flabel">Last Name</div>
+					<%= builder.text_field :last_name, style: "width:120px;font-size:110%;" %>
+				</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div style="clear:both;">
+				<div class="flabel">Birthday</div>
+				<% if builder.object.birthday? %>
+					<%= builder.text_field :birthday, style: "font-size:110%;", value: builder.object.birthday.strftime("%m/%d/%Y") %>
+				<% else %>
+					<%= builder.text_field :birthday, style: "font-size:110%;", placeholder: "mm/dd/yyyy" %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
