@@ -111,7 +111,6 @@ body{
 	width: 845px;
 	font-family: 'BebasRegular';
 	text-transform:uppercase;
-	font-size: 1.2em;
 	height: 0;
  	color: #696762;
     border-width: 20px 10px ;  
@@ -123,10 +122,11 @@ body{
 }
 
 #blockquote p{
-	margin-top: -6px;
+	margin-top: -10px;
 	color: #696762;
 	font-family: 'BebasRegular';
-	
+	font-size: 1.2em;
+	letter-spacing: .05em;
 }
 
 
@@ -162,6 +162,7 @@ body{
 	font-style: italic;
 	font-size: 1em;
 	text-align: center;
+	color: #f15e3e;
 }
 
 #call-to-action h4{
@@ -309,7 +310,7 @@ input{
 
 #no-more{
 	clear: both;
-	width: 858px;
+	width: 885px;
 	height: 197px;
 	background: #faf7e9;
 	margin: auto;	
@@ -339,7 +340,7 @@ input{
 	color: #f15e3e;	
 	text-transform: uppercase;
 	text-align: left;
-	width: 290px;
+	width: 315px;
 	font-size: 19px;
 	font-family: 'Antic Slab';
 	line-height: 1.2;
