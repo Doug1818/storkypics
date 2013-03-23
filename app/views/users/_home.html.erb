@@ -6,7 +6,7 @@
 <h2>Your little one</h2>
 <p>
 	<span style="font-weight:bold;"><%= "#{current_user.children.first.first_name} #{current_user.children.first.last_name}" %></span><br>
-	<%= "Born #{current_user.children.first.birthday.strftime("%m/%d/%Y")}" %>
+	<%= "Born #{current_user.children.first.birthday.strftime("%B %d, %Y")}" %>
 </p>
 <div style="margin-top:10px;">
 	<%= link_to "Edit", edit_child_path(current_user.children.first) %>

@@ -1,3 +1,5 @@
+<%= render 'shared/error_messages', object: f.object %>
+
 <div>
 	<span class="span4" style="margin-left:0;">
     <div style="float:left;margin-bottom:15px;">
@@ -16,16 +18,14 @@
     </div>
 	</span>
 	<span class="span6">
-		<%= f.hidden_field :_destroy %>
-		<%= link_to "Remove", '#', class: "remove_fields", style: "position:relative;top:48px;left:25px;" %>
     <div style="float:left;margin-bottom:15px;">
 			<div style="float:left;">
 		    <div class="flabel">City</div>
-		    <%= f.text_field :city, style: "width:120px;margin-right:17px;font-size:110%;" %>
+		    <%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
 		    <div class="flabel">State</div>
-		    <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:133px;" %>
+		    <%= f.select :state, User::STATES, {include_blank: true}, {style: "width:133px;", required: true} %>
 			</div>
     </div>
     <div style="clear:both;">

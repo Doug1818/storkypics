@@ -4,16 +4,24 @@
 	<%= render 'shared/error_messages', object: f.object %>
 	
 	<div class="flabel">First Name</div>
-	<%= f.text_field :first_name, style: "font-size:110%;" %>
+	<%= f.text_field :first_name, required: true, style: "font-size:110%;" %>
 
 	<div class="flabel">Last Name</div>
-	<%= f.text_field :last_name, style: "font-size:110%;" %>
+	<%= f.text_field :last_name, required: true, style: "font-size:110%;" %>
 
-	<div class="flabel">Birthday (mm/dd/yyyy)</div>
+	<div class="flabel">Birthday</div>
 	<% if f.object.birthday? %>
-		<%= f.text_field :birthday, style: "font-size:110%;", value: f.object.birthday.strftime("%m/%d/%Y") %>
+		<%= f.date_select :birthday, {order: [:month, :day, :year], 
+									  start_year: Time.now.year - 15, 
+									  end_year: Time.now.year}, 
+									  {style: "width:92px;"} %>
 	<% else %>
-		<%= f.text_field :birthday, style: "font-size:110%;", placeholder: "mm/dd/yyyy" %>
+		<%= f.date_select :birthday, {order: [:month, :day, :year],
+									  start_year: Time.now.year - 15, 
+									  end_year: Time.now.year, 
+									  prompt: true}, 
+									  {style: "width:92px;", 
+									  required: true} %>
 	<% end %>
 	
 	<div>

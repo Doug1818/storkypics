@@ -3,46 +3,46 @@
 		<div style="float:left;margin-bottom:15px;">
 			<div style="float:left;">
 				<div class="flabel">First Name</div>
-				<%= f.text_field :first_name, :autofocus => true,  style: "width:120px;margin-right:17px;font-size:110%;" %>
+				<%= f.text_field :first_name, autofocus: true, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
 				<div class="flabel">Last Name</div>
-				<%= f.text_field :last_name, style: "width:120px;font-size:110%;" %>
+				<%= f.text_field :last_name, required: true, style: "width:120px;font-size:110%;" %>
 			</div>
 		</div>
 		<div style="clear:both;">
 			<div class="flabel">Email</div>
-			<%= f.email_field :email, style: "font-size:110%;" %>
+			<%= f.email_field :email, required: true, style: "font-size:110%;" %>
 		</div>
 		<div style="float:left;margin-bottom:15px;">
 			<div style="float:left;">
 				<div class="flabel">Password</div>
-				<%= f.password_field :password, style: "width:120px;margin-right:17px;font-size:110%;" %>
+				<%= f.password_field :password, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
 				<div class="flabel">Confirmation</div>
-				<%= f.password_field :password_confirmation, style: "width:120px;font-size:110%;" %>
+				<%= f.password_field :password_confirmation, required: true, style: "width:120px;font-size:110%;" %>
 			</div>
 		</div>
 	</div>
 	<div class="span4">
 		<div>
 			<div class="flabel">Address</div>
-			<%= f.text_field :address, style: "font-size:110%;" %>
+			<%= f.text_field :address, required: true, style: "font-size:110%;" %>
 		</div>
 		<div style="float:left;margin-bottom:15px;">
 			<div style="float:left;">
 				<div class="flabel">City</div>
-				<%= f.text_field :city, style: "width:120px;margin-right:17px;font-size:110%;" %>
+				<%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
 				<div class="flabel">State</div>
-				<%= f.select :state, User::STATES, { include_blank: true }, style: "width:133px;" %>
+				<%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:133px;" %>
 			</div>
 		</div>
 		<div style="clear:both;">
 			<div class="flabel">Zip Code</div>
-			<%= f.text_field :zip_code, style: "font-size:110%;" %>
+			<%= f.text_field :zip_code, required: true, style: "font-size:110%;" %>
 		</div>
 	</div>
 </div>

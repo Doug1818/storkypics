@@ -14,6 +14,19 @@ class User < ActiveRecord::Base
   has_many :sendees, dependent: :destroy
   accepts_nested_attributes_for :children, :sendees, allow_destroy: true
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :zip_code, presence: true
+  validate  :zip_code_length
+
+  def zip_code_length
+    if !self.zip_code.blank? && self.zip_code.length != 5
+      self.errors[:zip_code] = "must be 5 digits"
+    end
+  end
 
   STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 
   	'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 

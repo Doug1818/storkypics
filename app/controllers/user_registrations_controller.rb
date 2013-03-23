@@ -8,9 +8,6 @@ class UserRegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(params[:user])
-    @user.children.each_with_index do |child, idx|
-      child.birthday = Date.strptime(params[:user][:children_attributes].values[idx][:birthday], "%m/%d/%Y").to_date
-    end
     if @user.save
       sign_in @user
       flash[:success] = "Welcome! You have signed up successfully."

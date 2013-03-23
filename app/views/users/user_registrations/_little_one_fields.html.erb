@@ -2,7 +2,7 @@
 	<div style="float:left;margin-bottom:15px;">
 		<div style="float:left;">
 			<div class="flabel">First Name</div>
-			<%= f.text_field :first_name, style: "width:120px;margin-right:17px;font-size:110%;" %>
+			<%= f.text_field :first_name, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
 		</div>
 		<div style="float:left;">
 			<div class="flabel">Last Name</div>
@@ -14,9 +14,17 @@
 	<div style="clear:both;">
 		<div class="flabel">Birthday</div>
 		<% if f.object.birthday? %>
-			<%= f.text_field :birthday, style: "font-size:110%;", value: f.object.birthday.strftime("%m/%d/%Y") %>
+			<%= f.date_select :birthday, {order: [:month, :day, :year], 
+										  start_year: Time.now.year - 15, 
+										  end_year: Time.now.year}, 
+										  {style: "width:25%;"} %>
 		<% else %>
-			<%= f.text_field :birthday, style: "font-size:110%;", placeholder: "mm/dd/yyyy" %>
+			<%= f.date_select :birthday, {order: [:month, :day, :year],
+										  start_year: Time.now.year - 15, 
+										  end_year: Time.now.year, 
+										  prompt: true}, 
+										  {style: "width:25%;", 
+										  required: true} %>
 		<% end %>
 	</div>
 </div>
