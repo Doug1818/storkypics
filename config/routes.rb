@@ -1,5 +1,7 @@
 Storkypics::Application.routes.draw do
-  
+  #get "errors/error_404"
+  #get "errors/error_500"
+
   devise_for :users, controllers: { registrations: "user_registrations" }
   resources :users
   resources :children
@@ -9,6 +11,10 @@ Storkypics::Application.routes.draw do
 
   root to: 'static_pages#home'
   match '/products',   to: 'static_pages#products'
+
+  unless Rails.application.config.consider_all_requests_local
+    match '*not_found', to: 'errors#error_404'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
