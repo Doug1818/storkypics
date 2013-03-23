@@ -9,11 +9,20 @@
     <h2>Launch Coming Soon!</h2>
   </div>
   <div class="modal-body product-text">
-    <p>We are just getting ready to launch! You can’t order pictures just yet, but you can Sign Up and start adding friends/family to your distribution list! We will be sure to let you know as soon we fully launch! To get started, click on the Sign Up button below!</p>
+    <% if user_signed_in? %>
+    	<p>We are just getting ready to launch! You can’t order pictures just yet, but you can start adding
+    	 friends/family to your distribution list! We will be sure to let you know as soon we fully launch!</p>
+    <% else %>
+    	<p>We are just getting ready to launch! You can’t order pictures just yet, but you can
+    	 Sign Up and start adding friends/family to your distribution list! We will be sure to 
+    	 let you know as soon we fully launch! To get started, click on the Sign Up button below!</p>
+	<% end %>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Close</a>
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
+    <% if !user_signed_in? %>
+    	<%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
+	<% end %>
   </div>
 </div>
 
