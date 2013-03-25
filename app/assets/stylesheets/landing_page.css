@@ -72,6 +72,8 @@ p{
 }
 
 
+
+
 /** Begin Sarah's CSS **/
 
 body{
@@ -535,6 +537,18 @@ h3 {
 	color: #696762;
 	line-height: 1.2;
 	font-size: 18px;
+	font-family: 'Georgia';
+	letter-spacing: .1em;
+}
+
+.links {
+	font-family: 'BebasRegular';
+	letter-spacing: .05em;
+	word-spacing: .2em;
+}
+
+.btn-txt {
+	color: #696762;
 	font-family: 'Georgia';
 	letter-spacing: .1em;
 }

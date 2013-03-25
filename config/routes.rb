@@ -10,7 +10,7 @@ Storkypics::Application.routes.draw do
   resources :subscribers
 
   root to: 'static_pages#home'
-  match '/products',   to: 'static_pages#products'
+  match '/how_it_works',   to: 'static_pages#how_it_works'
 
   unless Rails.application.config.consider_all_requests_local
     match '*not_found', to: 'errors#error_404'

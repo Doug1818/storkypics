@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
   	@subscriber = Subscriber.new
   end
 
-  def products
+  def how_it_works
   end
 end

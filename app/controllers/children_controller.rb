@@ -11,7 +11,7 @@ before_filter :authenticate_user!, only: [:edit, :update]
 			flash[:success] = "Update successful"
 			redirect_to root_path
 		else
-			redirect_to 'edit'
+			render 'edit'
 		end
   end
 end

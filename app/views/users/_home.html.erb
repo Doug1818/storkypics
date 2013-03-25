@@ -1,4 +1,4 @@
-<h2>Thank you for being part of our early Sign Up!</h2>
+<h1 style="margin-bottom:10px;">Thank you for being part of our early Sign Up!</h1>
 
 <p>Get your distribution list ready to go ahead of our upcomming launch!</p>
 
@@ -9,14 +9,14 @@
 	<%= "Born #{current_user.children.first.birthday.strftime("%B %d, %Y")}" %>
 </p>
 <div style="margin-top:10px;">
-	<%= link_to "Edit", edit_child_path(current_user.children.first) %>
+	<%= link_to "Edit", edit_child_path(current_user.children.first), class: "links" %>
 </div>
 
 <br><br>
 <h2>Your Distribution list</h2>
 
 <div style="margin:10px 0;">
-<%= link_to "Add Recipient", new_sendee_path %>
+<%= link_to "Add Recipient", new_sendee_path, class: "links" %>
 </div>
 
 <% current_user.sendees.each do |sendee| %>
@@ -26,7 +26,7 @@
 		<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>
 	</p>
 	<div style="margin-top:10px;">
-		<%= link_to "Edit", edit_sendee_path(sendee) %> | 
-		<%= link_to "Delete", sendee, method: :delete, confirm: "You sure?" %>
+		<%= link_to "Edit", edit_sendee_path(sendee), class: "links" %> | 
+		<%= link_to "Delete", sendee, method: :delete, confirm: "You sure?", class: "links" %>
 	</div><br>
 <% end %>

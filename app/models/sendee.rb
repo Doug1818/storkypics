@@ -1,9 +1,10 @@
 class Sendee < ActiveRecord::Base
-  attr_accessible :address, :city, :first_name, :last_name, :state, :zip_code
+  attr_accessible :address, :city, :first_name, :last_name, :state, :zip_code, :relationship
   belongs_to :user
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :relationship, presence: true
   validates :address, presence: true
   validates :city, presence: true
   validates :state, presence: true
@@ -15,4 +16,6 @@ class Sendee < ActiveRecord::Base
       self.errors[:zip_code] = "must be 5 digits"
     end
   end
+
+  RELATIONSHIPS = ['Grandparent', 'Aunt/Uncle', 'Cousin', 'Parent', 'Friend', 'Other']
 end

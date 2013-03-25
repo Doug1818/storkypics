@@ -11,20 +11,9 @@
 	<div id="container1">
 	
 		<div id="call-to-action">
-		
-			<p>Have Kids? Take Pics?</p><div id="blue-lines"></div>
-			<h4>Sign up for the launch!<br/><img class="arrow" src="/assets/arrow.png" alt="logo"></h4>
-						
-			<%= form_for @subscriber do |f| %>
-			  <div style="margin-left:auto;margin-right:auto;width:100%;">
-			    <%= f.text_field :first_name, style: "width:120px;height:25px;font-size:110%", placeholder: "first name" %>
-			    <%= f.text_field :last_name, style: "width:120px;height:25px;font-size:110%;margin-right:20px;", placeholder: "last name" %>
-			    <%= f.text_field :email, style: "margin-right:20px;height:25px;font-size:110%", placeholder: "email" %>
-			    <%= f.submit "Submit", class: "submit" %>
-			  </div>
-			<% end %>
-
-			<p style="margin: 10px 0 15px 0;">
+			<p>Have Kids? Take Pics?</p>
+			<h1 style="margin: 10px 0;"><%= link_to "Sign up", new_user_registration_path, style: "margin: 10px 0;text-decoration:none;" %> now!</h1><div id="blue-lines" style="position:relative;bottom:27px;"></div>
+			<p style="margin-bottom:15px;">
 				Want to help us out? Take our <%= link_to "survey", "https://www.surveymonkey.com/s/DXF9Z8G", target: "_blank" %>
 			</p>
 		</div>

@@ -1,5 +1,5 @@
 class SendeesController < ApplicationController
-before_filter :authenticate_user!, only: [:edit, :update]
+before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def new
     @sendee = Sendee.new
@@ -25,8 +25,7 @@ before_filter :authenticate_user!, only: [:edit, :update]
 			flash[:success] = "Update successful"
 			redirect_to root_path
 		else
-			flash[:success] = "Update unsuccessful. Please make sure all fields are filled out correctly."
-			redirect_to 'edit'
+			render 'edit'
 		end
   end
 

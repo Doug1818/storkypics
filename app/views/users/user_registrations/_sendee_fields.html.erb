@@ -1,3 +1,4 @@
+<%= render 'shared/error_messages', object: f.object %>
 <div>
 	<span class="span4" style="margin-left:0;">
     <div style="float:left;margin-bottom:15px;">
@@ -9,28 +10,33 @@
 		    <div class="flabel">Last Name</div>
 		    <%= f.text_field :last_name, required: true, style: "width:120px;font-size:110%;" %>
 			</div>
-    </div>
-    <div style="clear:both;">
-			<div class="flabel">Address</div>
-			<%= f.text_field :address, required: true, style: "font-size:110%;" %>
+			<div style="float:left;">
+		    <div class="flabel">Relationship to Child</div>
+		    <%= f.select :relationship, Sendee::RELATIONSHIPS, { include_blank: true, required: true }, style: "width:288px;" %>
+			</div>
     </div>
 	</span>
 	<span class="span6">
 		<%= f.hidden_field :_destroy %>
-		<%= link_to "Remove", '#', class: "remove_fields", style: "position:relative;top:48px;left:25px;" %>
+		<%= link_to "Remove", '#', class: "remove_fields", 
+			style: "position:relative;top:48px;left:25px;", class: "links" %>
+    <div style="float:left;">
+			<div class="flabel">Address</div>
+			<%= f.text_field :address, required: true, style: "font-size:110%;" %>
+    </div>
     <div style="float:left;margin-bottom:15px;">
 			<div style="float:left;">
 		    <div class="flabel">City</div>
-		    <%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
+		    <%= f.text_field :city, required: true, style: "width:90px;margin-right:5px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
 		    <div class="flabel">State</div>
-		    <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:133px;" %>
+		    <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:100px;margin-right:5px" %>
 			</div>
-    </div>
-    <div style="clear:both;">
-			<div class="flabel">Zip Code</div>
-			<%= f.text_field :zip_code, required: true, style: "font-size:110%;" %>
+			<div style="float:left;">
+				<div class="flabel">Zip Code</div>
+				<%= f.text_field :zip_code, required: true, style: "width:60px;font-size:110%;" %>
+	    </div>
     </div>
 	</span>
 </div>
