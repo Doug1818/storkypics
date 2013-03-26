@@ -541,7 +541,7 @@ h3 {
 	letter-spacing: .1em;
 }
 
-.links {
+.links a {
 	font-family: 'BebasRegular';
 	letter-spacing: .05em;
 	word-spacing: .2em;
