@@ -13,7 +13,12 @@
     <% end %>
   </div>
 
-	<h2>Your Distribution List</h2>
+	<h2 style="margin-bottom:0px;">
+    <a href="#" rel="tooltip" 
+       title="At least one recipient is required"
+       style="color:#f15e3e;">
+       Your Distribution List</a>
+  </h2>
   <%= f.fields_for :sendees do |builder| %>
     <%= render 'sendee_fields', f: builder %>
   <% end %>
