@@ -25,6 +25,30 @@ class UserRegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def edit
+    @user = current_user
+    if request.referer.include?("orders/new")
+      @new_order_path = true
+    else
+      @new_order_path = false
+    end
+  end
+
+  def update
+    @user = current_user
+    #binding.pry
+    if @user.update_with_password(params[:user])
+      flash[:success] = "You updated your account successfully."
+      if params[:user][:new_order_path] == "true"
+        redirect_to new_order_path
+      else
+        redirect_to root_path
+      end
+    else
+      render 'edit'
+    end  
+  end
+
   def destroy
     super
   end

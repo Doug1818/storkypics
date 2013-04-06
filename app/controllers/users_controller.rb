@@ -11,7 +11,7 @@ before_filter :authenticate_user!, only: [:show, :update]
 			flash[:success] = "Update successful"
 			redirect_to root_path
 		else
-			flash[:success] = "Update unsuccessful. Please make sure all fields are filled out correctly."
+			flash[:error] = "Update unsuccessful. Please make sure all fields are filled out correctly."
 			redirect_to root_path
 		end
   end

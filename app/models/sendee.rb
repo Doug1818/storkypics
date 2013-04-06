@@ -1,5 +1,6 @@
 class Sendee < ActiveRecord::Base
-  attr_accessible :address, :city, :first_name, :last_name, :state, :zip_code, :relationship
+  attr_accessible :address, :city, :first_name, :last_name, :state, :zip_code, :relationship, :new_order_path
+  attr_accessor :new_order_path
   belongs_to :user
   has_many :sendorders, dependent: :destroy
   has_many :orders, through: :sendorders

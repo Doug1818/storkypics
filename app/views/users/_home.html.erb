@@ -32,15 +32,15 @@
 	<span style="font-weight:bold;"><%= "#{current_user.children.first.first_name} #{current_user.children.first.last_name}" %></span><br>
 	<%= "Born #{current_user.children.first.birthday.strftime("%B %d, %Y")}" %>
 </p>
-<div style="margin-top:10px;">
-	<%= link_to "Edit", edit_child_path(current_user.children.first), class: "links" %>
+<div style="margin-top:10px;" class="links">
+	<%= link_to "Edit", edit_child_path(current_user.children.first) %>
 </div>
 
 <br><br>
 <h2>Your Distribution list</h2>
 
-<div style="margin:10px 0;">
-<%= link_to "Add Recipient", new_sendee_path, class: "links" %>
+<div style="margin:10px 0;" class="links">
+<%= link_to "Add Recipient", new_sendee_path %>
 </div>
 
 <% current_user.sendees.each do |sendee| %>
@@ -49,8 +49,8 @@
 		<%= sendee.address %><br>
 		<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>
 	</p>
-	<div style="margin-top:10px;">
-		<%= link_to "Edit", edit_sendee_path(sendee), class: "links" %> | 
-		<%= link_to "Delete", sendee, method: :delete, confirm: "You sure?", class: "links" %>
+	<div style="margin-top:10px;" class="links">
+		<%= link_to "Edit", edit_sendee_path(sendee) %> | 
+		<%= link_to "Delete", sendee, method: :delete, confirm: "You sure?" %>
 	</div><br>
 <% end %>

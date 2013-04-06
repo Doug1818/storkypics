@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :address,
-  	:city, :state, :zip_code, :children_attributes, :sendees_attributes
+  	:city, :state, :zip_code, :children_attributes, :sendees_attributes, :new_order_path
   # attr_accessible :title, :body
+  attr_accessor :new_order_path
 
   has_many :children, dependent: :destroy
   has_many :sendees, dependent: :destroy

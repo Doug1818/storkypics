@@ -17,13 +17,22 @@ before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def edit
     @sendee = current_user.sendees.find(params[:id])
+    if request.referer.include?("orders/new")
+      @new_order_path = true
+    else
+      @new_order_path = false
+    end
   end
 
   def update
   	@sendee = current_user.sendees.find(params[:id])
 		if @sendee.update_attributes(params[:sendee])
 			flash[:success] = "Update successful"
-			redirect_to root_path
+			if params[:sendee][:new_order_path] == "true"
+        redirect_to new_order_path
+      else
+        redirect_to root_path
+      end
 		else
 			render 'edit'
 		end

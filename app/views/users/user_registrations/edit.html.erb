@@ -3,60 +3,62 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-<div class="row">
-  <div class="span4">
-    <div style="float:left;margin-bottom:15px;">
-      <div style="float:left;">
-        <div class="flabel">First Name</div>
-        <%= f.text_field :first_name, :autofocus => true, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
+  <div class="row">
+    <div class="span4">
+      <div style="float:left;margin-bottom:15px;">
+        <div style="float:left;">
+          <div class="flabel">First Name</div>
+          <%= f.text_field :first_name, :autofocus => true, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
+        </div>
+        <div style="float:left;">
+          <div class="flabel">Last Name</div>
+          <%= f.text_field :last_name, required: true, style: "width:120px;font-size:110%;" %>
+        </div>
       </div>
-      <div style="float:left;">
-        <div class="flabel">Last Name</div>
-        <%= f.text_field :last_name, required: true, style: "width:120px;font-size:110%;" %>
+      <div style="clear:both;">
+        <div class="flabel">Email</div>
+        <%= f.email_field :email, required: true, style: "font-size:110%;" %>
+      </div>
+      <div style="float:left;margin-bottom:15px;">
+        <div style="float:left;">
+          <div class="flabel">Password</div>
+          <%= f.password_field :password, :autocomplete => "off", style: "width:120px;margin-right:17px;font-size:110%;" %>
+        </div>
+        <div style="float:left;">
+          <div class="flabel">Confirmation</div>
+          <%= f.password_field :password_confirmation, style: "width:120px;font-size:110%;" %>
+        </div>
+        <div style="float:left;">(leave blank if you don't want to change it)</div>
+        <div style="float:left;">
+          <div class="flabel">Current Password</div>
+          <%= f.password_field :current_password, required: true %>
+          <div style="float:left;">(we need your current password to confirm your changes)</div>
+        </div>
       </div>
     </div>
-    <div style="clear:both;">
-      <div class="flabel">Email</div>
-      <%= f.email_field :email, required: true, style: "font-size:110%;" %>
-    </div>
-    <div style="float:left;margin-bottom:15px;">
-      <div style="float:left;">
-        <div class="flabel">Password</div>
-        <%= f.password_field :password, :autocomplete => "off", style: "width:120px;margin-right:17px;font-size:110%;" %>
+    <div class="span4">
+      <div>
+        <div class="flabel">Address</div>
+        <%= f.text_field :address, required: true, style: "font-size:110%;" %>
       </div>
-      <div style="float:left;">
-        <div class="flabel">Confirmation</div>
-        <%= f.password_field :password_confirmation, style: "width:120px;font-size:110%;" %>
+      <div style="float:left;margin-bottom:15px;">
+        <div style="float:left;">
+          <div class="flabel">City</div>
+          <%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
+        </div>
+        <div style="float:left;">
+          <div class="flabel">State</div>
+          <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:133px;" %>
+        </div>
       </div>
-      <div style="float:left;">(leave blank if you don't want to change it)</div>
-      <div style="float:left;">
-        <div class="flabel">Current Password</div>
-        <%= f.password_field :current_password, required: true %>
-        <div style="float:left;">(we need your current password to confirm your changes)</div>
+      <div style="clear:both;">
+        <div class="flabel">Zip Code</div>
+        <%= f.text_field :zip_code, required: true, style: "font-size:110%;" %>
       </div>
     </div>
   </div>
-  <div class="span4">
-    <div>
-      <div class="flabel">Address</div>
-      <%= f.text_field :address, required: true, style: "font-size:110%;" %>
-    </div>
-    <div style="float:left;margin-bottom:15px;">
-      <div style="float:left;">
-        <div class="flabel">City</div>
-        <%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
-      </div>
-      <div style="float:left;">
-        <div class="flabel">State</div>
-        <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:133px;" %>
-      </div>
-    </div>
-    <div style="clear:both;">
-      <div class="flabel">Zip Code</div>
-      <%= f.text_field :zip_code, required: true, style: "font-size:110%;" %>
-    </div>
-  </div>
-</div>
+
+  <%= f.hidden_field :new_order_path, value: @new_order_path %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
