@@ -1,0 +1,15 @@
+<h1>Send pics!</h1>
+
+<%= form_for(@order, html: { multipart: true }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+	<h2>Add Pictures</h2>
+	<%= f.fields_for :pictures do |builder| %>
+		<%= render 'picture_fields', f: builder %>
+	<% end %>
+	<span class="links"><%= link_to_add_fields "Add Another!", f, :pictures %></span>
+
+	<h2 style="margin-top:50px;">Select Recipients</h2>
+  
+	<div style="clear:both;"><%= f.submit "Submit", class: "submit", style: "margin-top:25px;" %></div>
+<% end %>

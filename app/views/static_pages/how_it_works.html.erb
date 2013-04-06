@@ -1,6 +1,6 @@
 <div class="center-pic">
-	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), "#signupModal", "data-toggle" => "modal" %>
-	<%= link_to "Order Pics", "#signupModal", "data-toggle" => "modal", class: "order-pics-btn" %>
+	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), new_order_path %>
+	<%= link_to "Send Pics", new_order_path, class: "send-pics-btn" %>
 </div>
 
 <div class="modal hide" id="signupModal">

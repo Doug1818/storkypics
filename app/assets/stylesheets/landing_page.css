@@ -464,7 +464,7 @@ h3 {
 	width: 233px;
 }
 
-.order-pics-btn {
+.send-pics-btn {
 	width: 129px;
 	height: 35px;
 	background: #a0c8d4;
@@ -481,10 +481,10 @@ h3 {
 	margin-top: 5px;
 	position:relative;
 	bottom:120px;
-	left:70px;
+	left:75px;
 }
 
-.order-pics-btn:hover { text-decoration:none; }
+.send-pics-btn:hover { text-decoration:none; }
 
 .product-pic {
 	border: 10px solid #faf7e9;

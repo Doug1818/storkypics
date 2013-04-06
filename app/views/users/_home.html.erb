@@ -1,6 +1,26 @@
-<h1 style="margin-bottom:10px;">Thank you for being part of our early Sign Up!</h1>
+<div id="myCarousel" class="carousel slide" style="margin-left:auto;margin-right:auto;width:500px;margin-top:50px;">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <% Picture.of_user(current_user)[1..-1].each_with_index do |picture, idx| %>
+	    <li data-target="#myCarousel" data-slide-to="<%= idx + 1 %>"></li>
+    <% end %>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><%= image_tag(Picture.of_user(current_user).first.pic.url(:large)) %></div>
+    <% Picture.of_user(current_user)[1..-1].each do |picture| %>
+	    <div class="item"><%= image_tag(picture.pic.url(:large)) if picture.pic_content_type %></div>
+    <% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
 
-<p>Get your distribution list ready to go ahead of our upcoming launch!</p>
+<!--<div class="center-pic">
+	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), new_order_path %>
+	<%= link_to "Send Pics", new_order_path, class: "send-pics-btn" %>
+</div>-->
 
 <br><br>
 <h2>Your little one</h2>

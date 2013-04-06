@@ -1,0 +1,15 @@
+<div style="margin: 20px 0;">
+    <% if f.object.pic? %>
+    	<%= link_to image_tag(f.object.pic.url(:thumb)), f.object.pic.url(:large), target: "_blank" %>
+    <% else %>
+		<%= f.file_field :pic %>
+    <% end %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "Remove", '#', class: "remove_fields", 
+							   style: "position:relative;top:5px;left:25px;
+									   font-family: 'BebasRegular';
+									   letter-spacing: .05em;
+									   word-spacing: .2em;" %>
+</div>

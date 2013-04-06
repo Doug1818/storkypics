@@ -6,7 +6,7 @@ Storkypics::Application.routes.draw do
   resources :users
   resources :children
   resources :sendees
-
+  resources :orders
   resources :subscribers
 
   root to: 'static_pages#home'
