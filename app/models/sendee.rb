@@ -1,6 +1,8 @@
 class Sendee < ActiveRecord::Base
   attr_accessible :address, :city, :first_name, :last_name, :state, :zip_code, :relationship
   belongs_to :user
+  has_many :sendorders, dependent: :destroy
+  has_many :orders, through: :sendorders
 
   validates :first_name, presence: true
   validates :last_name, presence: true

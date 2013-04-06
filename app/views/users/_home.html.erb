@@ -1,3 +1,4 @@
+<% if Picture.of_user(current_user).all != [] %>
 <div id="myCarousel" class="carousel slide" style="margin-left:auto;margin-right:auto;width:500px;margin-top:50px;">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -16,11 +17,14 @@
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
-
-<!--<div class="center-pic">
+<% else %>
+<div class="center-pic">
 	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), new_order_path %>
 	<%= link_to "Send Pics", new_order_path, class: "send-pics-btn" %>
-</div>-->
+</div>
+<% end %>
+
+
 
 <br><br>
 <h2>Your little one</h2>

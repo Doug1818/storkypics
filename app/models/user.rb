@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   has_many :children, dependent: :destroy
   has_many :sendees, dependent: :destroy
-  has_many :orders
+  has_many :orders, dependent: :destroy
   accepts_nested_attributes_for :children, :sendees, allow_destroy: true
 
   scope :pictures, lambda { |user| joins(:order).joins(:order => :pictures).where("pictures.user_id = ?", user.id) }

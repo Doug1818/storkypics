@@ -3,13 +3,38 @@
 <%= form_for(@order, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   
-	<h2>Add Pictures</h2>
+	<h2 style="margin-bottom:35px;">Add Pictures (up to 3)</h2>
 	<%= f.fields_for :pictures do |builder| %>
 		<%= render 'picture_fields', f: builder %>
 	<% end %>
 	<span class="links"><%= link_to_add_fields "Add Another!", f, :pictures %></span>
 
 	<h2 style="margin-top:50px;">Select Recipients</h2>
+	<%= f.check_box :send_to_self, style: "position:relative;top:11px;margin-right:10px;" %>
+	<p>
+		<span style="font-weight:bold;"><%= "#{current_user.first_name} #{current_user.last_name}" %></span><br>
+		<%= current_user.address %><br>
+		<%= "#{current_user.city}, #{current_user.state}, #{current_user.zip_code}" %>
+	</p>
+	<br>
+	<% current_user.sendees.each do |sendee| %>
+		<%= hidden_field_tag "order[sendee_ids][]", nil %>
+		<%= check_box_tag "order[sendee_ids][]", sendee.id, @order.sendee_ids.include?(sendee.id),
+				style: "position:relative;top:11px;
+								margin-right:10px;" %>
+		<p>
+			<span style="font-weight:bold;"><%= "#{sendee.first_name} #{sendee.last_name}" %></span><br>
+			<%= sendee.address %><br>
+			<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>
+		</p>
+	<br>
+	<% end %>
   
 	<div style="clear:both;"><%= f.submit "Submit", class: "submit", style: "margin-top:25px;" %></div>
 <% end %>
+
+<script type="text/javascript">
+	$(function() {       
+    $("#new_order").find('input:checkbox').prop("checked", true);
+	});
+</script>
