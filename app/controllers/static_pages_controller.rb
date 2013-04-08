@@ -11,4 +11,7 @@ class StaticPagesController < ApplicationController
 
   def user_agreement
   end
+
+  def contact
+  end
 end

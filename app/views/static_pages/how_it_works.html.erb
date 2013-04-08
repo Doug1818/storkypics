@@ -1,30 +1,16 @@
-<div class="center-pic">
-	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), new_order_path %>
-	<%= link_to "Send Pics", new_order_path, class: "send-pics-btn" %>
-</div>
-
-<div class="modal hide" id="signupModal">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h2>Launch Coming Soon!</h2>
-  </div>
-  <div class="modal-body product-text">
-    <% if user_signed_in? %>
-    	<p>We are just getting ready to launch! You can’t order pictures just yet, but you can start adding
-    	 friends/family to your distribution list! We will be sure to let you know as soon we fully launch!</p>
-    <% else %>
-    	<p>We are just getting ready to launch! You can’t order pictures just yet, but you can
-    	 Sign Up and start adding friends/family to your distribution list! We will be sure to 
-    	 let you know as soon we fully launch! To get started, click on the Sign Up button below!</p>
-	<% end %>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn btn-txt" data-dismiss="modal">Close</a>
-    <% if !user_signed_in? %>
-    	<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-txt" %>
-	<% end %>
-  </div>
-</div>
+<% if user_signed_in? %>
+	<div class="center-pic">
+		<%= link_to image_tag('mailbox.jpg', class: "product-pic"), new_order_path %>
+		<%= link_to "Send Pics", new_order_path, class: "send-pics-btn" %>
+	</div>
+<% else %>
+	<div id="call-to-action" style="margin-top:25px;margin-bottom:25px;">
+		<h1 style="margin: 10px 0;">
+			<%= link_to "Sign up", new_user_registration_path, style: "margin: 10px 0;text-decoration:none;" %> now!
+		</h1>
+		<div id="blue-lines" style="position:relative;bottom:27px;left:4px;"></div>
+	</div>
+<% end %>
 
 <div class="product-text">
 	<h2>How it Works</h2>
