@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
-before_filter :authenticate_user!, only: [:new]
+before_filter :authenticate_user!, only: [:new, :create, :show]
 
   def new
     @order = Order.new
     @order.pictures.new
+    @cart = Cart.new
   end
 
   def create
@@ -14,10 +15,14 @@ before_filter :authenticate_user!, only: [:new]
 				@order.update_attributes(recipient_count: @order.sendees.size)
 			end
   	if @order.save
-      flash[:success] = "Order created"
-      redirect_to root_path
+  		@cart = @order.carts.create(recipient_count: @order.recipient_count)
+      redirect_to @cart.paypal_url(root_url)
     else
       render 'new'
     end
   end
+
+  def show
+  	@order = Order.find(params[:id])
+	end
 end

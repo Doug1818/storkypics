@@ -36,7 +36,6 @@ class UserRegistrationsController < Devise::RegistrationsController
 
   def update
     @user = current_user
-    #binding.pry
     if @user.update_with_password(params[:user])
       flash[:success] = "You updated your account successfully."
       if params[:user][:new_order_path] == "true"

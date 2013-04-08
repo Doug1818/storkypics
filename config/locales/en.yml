@@ -7,3 +7,5 @@ en:
       user:
         children: ""
         sendees: ""
+      "order/pictures":
+        pic: "Pictures"

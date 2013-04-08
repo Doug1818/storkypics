@@ -11,6 +11,8 @@ Storkypics::Application.routes.draw do
 
   root to: 'static_pages#home'
   match '/how_it_works',   to: 'static_pages#how_it_works'
+  match '/privacy_policy',   to: 'static_pages#privacy_policy'
+  match '/user_agreement',   to: 'static_pages#user_agreement'
 
   unless Rails.application.config.consider_all_requests_local
     match '*not_found', to: 'errors#error_404'

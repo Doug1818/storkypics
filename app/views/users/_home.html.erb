@@ -8,9 +8,19 @@
   </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="active item"><%= image_tag(Picture.of_user(current_user).first.pic.url(:large)) %></div>
+    <div class="active item">
+    	<%= image_tag(Picture.of_user(current_user).first.pic.url(:large)) %>
+    	<div class="carousel-caption">
+    		<h2>To Send More Pics Click <%= link_to "Here", new_order_path %>!</h2>
+    	</div>
+    </div>
     <% Picture.of_user(current_user)[1..-1].each do |picture| %>
-	    <div class="item"><%= image_tag(picture.pic.url(:large)) if picture.pic_content_type %></div>
+	    <div class="item">
+	    	<%= image_tag(picture.pic.url(:large)) if picture.pic_content_type %>
+		    <div class="carousel-caption">
+	    		<h2>Order More Pics <%= link_to "here", new_order_path %>!</h2>
+	    	</div>
+	    </div>
     <% end %>
   </div>
   <!-- Carousel nav -->
@@ -24,7 +34,29 @@
 </div>
 <% end %>
 
+<% if current_user.orders.any? %>
+	<br><br>
+	<h2>Your Order History</h2>
 
+	<table class="order-table">
+    <tr>
+    	<th>Date</th>
+    	<th>Pics</th>
+    	<th>Recipients</th>
+    	<th>Price</th>
+    	<th>View Pics</th>
+    </tr>
+    <% current_user.orders.each do |order| %>
+    	<tr>
+	    	<td><%= order.created_at.strftime("%B %d, %Y") %></td>
+	    	<td><%= order.pictures.count %></td>
+	    	<td><%= order.recipient_count %></td>
+	    	<td><%= "$#{order.recipient_count*3}" %></td>
+	    	<td><%= link_to image_tag("glyphicons_319_sort.png"), order_path(order), target: "_blank" %></td>
+	    </tr>
+    <% end %>
+	</table>
+<% end %>
 
 <br><br>
 <h2>Your little one</h2>
@@ -37,7 +69,7 @@
 </div>
 
 <br><br>
-<h2>Your Distribution list</h2>
+<h2>Your Distribution List</h2>
 
 <div style="margin:10px 0;" class="links">
 <%= link_to "Add Recipient", new_sendee_path %>
