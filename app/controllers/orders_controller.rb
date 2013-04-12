@@ -16,7 +16,7 @@ before_filter :authenticate_user!, only: [:new, :create, :show]
 			end
   	if @order.save
   		@cart = @order.carts.create(recipient_count: @order.recipient_count)
-      redirect_to @cart.paypal_url(root_url)
+      redirect_to @cart.paypal_url(root_url, payment_notifications_url)
     else
       render 'new'
     end

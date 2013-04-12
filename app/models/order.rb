@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :recipient_count, :send_to_self, :pictures_attributes, :sendee_ids
+  attr_accessible :recipient_count, :send_to_self, :pictures_attributes, :sendee_ids, :purchased_at
 
   belongs_to :user
   has_many :pictures, dependent: :destroy
@@ -7,6 +7,8 @@ class Order < ActiveRecord::Base
   has_many :sendorders, dependent: :destroy
   has_many :sendees, through: :sendorders
   has_many :carts, dependent: :destroy
+
+  scope :purchased, where("purchased_at IS NOT NULL")
 
   validate :validate_pictures
 

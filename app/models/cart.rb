@@ -1,15 +1,17 @@
 class Cart < ActiveRecord::Base
-  attr_accessible :recipient_count
+  attr_accessible :recipient_count, :purchased_at
   belongs_to :order
+  has_many :payment_notifications
 
-  def paypal_url(return_url)
+  def paypal_url(return_url, notify_url)
 
     values = {
       :business => 'contact@storkypics.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
-      :invoice => id
+      :invoice => id,
+      :notify_url => notify_url
     }
     # These values set up the details for the item on paypal.
     values.merge!({

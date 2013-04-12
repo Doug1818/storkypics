@@ -8,6 +8,7 @@ Storkypics::Application.routes.draw do
   resources :sendees
   resources :orders
   resources :subscribers
+  resources :payment_notifications
 
   root to: 'static_pages#home'
   match '/how_it_works',   to: 'static_pages#how_it_works'

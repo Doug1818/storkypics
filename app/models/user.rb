@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :orders, dependent: :destroy
   accepts_nested_attributes_for :children, :sendees, allow_destroy: true
 
-  scope :pictures, lambda { |user| joins(:order).joins(:order => :pictures).where("pictures.user_id = ?", user.id) }
+  #scope :pictures, lambda { |user| joins(:order).joins(:order => :pictures).where("pictures.user_id = ?", user.id) }
 
   validates :first_name, presence: true
   validates :last_name, presence: true

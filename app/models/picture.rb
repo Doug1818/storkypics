@@ -13,7 +13,9 @@ class Picture < ActiveRecord::Base
 				bucket: ENV['S3_BUCKET'] },
 			path: ":style/:id/:filename"
 
-	scope :of_user, lambda { |user| where("user_id = ?", user.id) }
+	#scope :of_user, lambda { |user| where("user_id = ?", user.id) }
+	#scope :purchased, joins(:order).where("orders.purchased_at IS NOT NULL")
+	scope :purchased_by_user, lambda { |user| joins(:order).where("orders.purchased_at IS NOT NULL AND pictures.user_id = ?", user.id) }
 
   validates_attachment_presence :pic
   validates_attachment_size :pic, less_than: 5.megabytes

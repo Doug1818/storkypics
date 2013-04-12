@@ -1,4 +1,4 @@
-<% if Picture.of_user(current_user).all != [] %>
+<% if Picture.purchased_by_user(current_user).all != [] %>
 <div id="myCarousel" class="carousel slide" style="margin-left:auto;margin-right:auto;width:500px;margin-top:50px;">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -9,12 +9,12 @@
   <!-- Carousel items -->
   <div class="carousel-inner">
     <div class="active item">
-    	<%= image_tag(Picture.of_user(current_user).first.pic.url(:large)) %>
+    	<%= image_tag(Picture.purchased_by_user(current_user).first.pic.url(:large)) %>
     	<div class="carousel-caption">
     		<h2>To Send More Pics Click <%= link_to "Here", new_order_path %>!</h2>
     	</div>
     </div>
-    <% Picture.of_user(current_user)[1..-1].each do |picture| %>
+    <% Picture.purchased_by_user(current_user)[1..-1].each do |picture| %>
 	    <div class="item">
 	    	<%= image_tag(picture.pic.url(:large)) if picture.pic_content_type %>
 		    <div class="carousel-caption">
@@ -34,7 +34,7 @@
 </div>
 <% end %>
 
-<% if current_user.orders.any? %>
+<% if current_user.orders.purchased.any? %>
 	<br><br>
 	<h2>Your Order History</h2>
 
@@ -46,7 +46,7 @@
     	<th>Price</th>
     	<th>View Pics</th>
     </tr>
-    <% current_user.orders.each do |order| %>
+    <% current_user.orders.purchased.each do |order| %>
     	<tr>
 	    	<td><%= order.created_at.strftime("%B %d, %Y") %></td>
 	    	<td><%= order.pictures.count %></td>
