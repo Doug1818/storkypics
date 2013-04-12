@@ -17,7 +17,6 @@ class UserRegistrationsController < Devise::RegistrationsController
         list_id = gb.lists({:list_name => "Users"})["data"].first["id"]
         gb.list_subscribe(:id => list_id, :email_address => @user.email, :merge_vars => {'fname' => @user.first_name, 'lname' => @user.last_name }, :double_optin => false)
       rescue Gibbon::MailChimpError => e
-        redirect_to root_path
         return
       end
     else
