@@ -65,6 +65,18 @@ Storkypics::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  # Mailgun smtp settings
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'], 
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'storkypics-staging.com',
+    :authentication => :plain,
+  }
+
   # Specify what domain to use for mailer URLs (also required for Devise)
   config.action_mailer.default_url_options = { host: 'storkypics-staging.herokuapp.com' }
 end
