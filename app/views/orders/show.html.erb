@@ -1,5 +1,5 @@
 <h2>Order sent <%= @order.created_at.strftime("%B %d, %Y") %></h2>
 
 <% @order.pictures.each do |picture| %>
-	<%= image_tag(picture.pic.url(:medium), style: "margin: 20px 0;") %>
+	<%= image_tag(picture.pic.url(:medium), style: "margin: 20px 0;") %><br>
 <% end %>

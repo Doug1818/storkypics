@@ -30,6 +30,7 @@
 <% else %>
 <div class="center-pic">
 	<%= link_to image_tag('mailbox.jpg', class: "product-pic"), new_order_path %>
+	<span style="position:relative;right:17px;"><%= link_to "Click Here To", new_order_path, class: "send-pics-btn" %></span><br><br>
 	<%= link_to "Send Pics", new_order_path, class: "send-pics-btn" %>
 </div>
 <% end %>
@@ -74,6 +75,15 @@
 <div style="margin:10px 0;" class="links">
 <%= link_to "Add Recipient", new_sendee_path %>
 </div>
+
+<p>
+	<span style="font-weight:bold;"><%= "#{current_user.first_name} #{current_user.last_name}" %></span><br>
+	<%= current_user.address %><br>
+	<%= "#{current_user.city}, #{current_user.state}, #{current_user.zip_code}" %>
+</p>
+<div style="margin-top:10px;" class="links">
+	<%= link_to "Edit", edit_user_registration_path(current_user) %>
+</div><br>
 
 <% current_user.sendees.each do |sendee| %>
 	<p>

@@ -1,9 +1,5 @@
 <div style="margin: 20px 0;">
-    <% if f.object.pic? %>
-    	<%= link_to image_tag(f.object.pic.url(:thumb)), f.object.pic.url(:large), target: "_blank" %>
-    <% else %>
-		<%= f.file_field :pic %>
-    <% end %>
+	<%= f.file_field :pic %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
 
 	<%= f.hidden_field :_destroy %>
