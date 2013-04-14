@@ -1,0 +1,24 @@
+<p>New order from <%= "#{@user.first_name} #{@user.last_name}" %>:</p>
+
+<p><%= "#{@order.recipient_count} #{'recipient'.pluralize(self.recipient_count)}" %>:</p>
+<ul>
+	<% if @order.send_to_self == true %>
+		<li>
+			<span style="font-weight:bold;"><%= "#{@user.first_name} #{@user.last_name}" %></span><br>
+			<%= @user.address %>
+			<%= "#{@user.city}, #{@user.state}, #{@user.zip_code}" %>
+		</li>
+	<% end %>
+	
+	<% @order.sendees.each do |sendee| %>
+		<li>
+			<span style="font-weight:bold;"><%= "#{sendee.first_name} #{sendee.last_name}" %></span><br>
+			<%= sendee.address %><br>
+			<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>	
+		</li>
+	<% end %>
+</ul>
+
+<% @order.pictures.each do |picture| %>
+	<%= image_tag(picture.pic.url(:medium), style: "margin: 20px 0;") %>
+<% end %>

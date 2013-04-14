@@ -7,7 +7,10 @@ class PaymentNotification < ActiveRecord::Base
   def mark_cart_as_purchased
   	if status == "Completed"
   		cart.update_attributes(purchased_at: Time.now)
-  		Order.find(cart.order_id).update_attributes(purchased_at: Time.now)
+  		@order = Order.find(cart.order_id)
+  		@user = User.find(@order.user_id)
+  		@order.update_attributes(purchased_at: Time.now)
+  		UserMailer.order_confirmation(@user, @order).deliver
 	end
   end
 end
