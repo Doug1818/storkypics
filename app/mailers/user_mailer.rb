@@ -4,6 +4,9 @@ class UserMailer < ActionMailer::Base
   def order_confirmation(user, order)
     @user = user
     @order = order
-    mail from:"Storkypics <contact@storkypics.com>", to: contact@storkypics.com, subject: "New order from #{@user.first_name} #{@user.last_name}"
+    
+    mail from:"Storkypics <contact@storkypics.com>",
+    to: "Storkypics <contact@storkypics.com>",
+    subject: "New order from #{@user.first_name} #{@user.last_name}"
   end
 end
