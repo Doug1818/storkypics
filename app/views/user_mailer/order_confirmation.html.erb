@@ -5,7 +5,7 @@
 	<% if @order.send_to_self == true %>
 		<li>
 			<span style="font-weight:bold;"><%= "#{@user.first_name} #{@user.last_name}" %></span><br>
-			<%= @user.address %>
+			<%= @user.address %><br>
 			<%= "#{@user.city}, #{@user.state}, #{@user.zip_code}" %>
 		</li>
 	<% end %>
