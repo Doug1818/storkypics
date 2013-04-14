@@ -1,6 +1,6 @@
 <p>New order from <%= "#{@user.first_name} #{@user.last_name}" %>:</p>
 
-<p><%= "#{@order.recipient_count} #{'recipient'.pluralize(self.recipient_count)}" %>:</p>
+<p><%= "#{@order.recipient_count} #{'recipient'.pluralize(@order.recipient_count)}" %>:</p>
 <ul>
 	<% if @order.send_to_self == true %>
 		<li>
