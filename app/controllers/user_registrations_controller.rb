@@ -11,6 +11,8 @@ class UserRegistrationsController < Devise::RegistrationsController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome! You have signed up successfully."
+      UserMailer.new_user_alert(@user).deliver
+      UserMailer.new_user_welcome(@user).deliver
       redirect_to root_path
       begin
         gb = Gibbon.new(ENV['MC_API_KEY'])

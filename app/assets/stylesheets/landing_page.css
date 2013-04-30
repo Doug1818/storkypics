@@ -426,6 +426,7 @@ h1 {
 	font-family: 'BebasRegular';
 	font-size: 36px;
 	letter-spacing: .06em;
+	word-spacing: 5px;
 	margin-top: 30px;
 	margin-bottom: 40px;
 }
@@ -435,6 +436,7 @@ h2 {
 	font-family: 'BebasRegular';
 	color: #f15e3e;
 	letter-spacing: .12em;
+	word-spacing: 3px;
 	line-height: 1.5;
 	font-size: 1.3em;
 	margin-bottom: 10px;
@@ -445,6 +447,7 @@ h3 {
 	font-family: 'BebasRegular';
 	color: #f15e3e;
 	letter-spacing: .12em;
+	word-spacing: 2px;
 	line-height: 1.5;
 	font-size: 1.1em;
 }

@@ -1,0 +1,8 @@
+<p><%= "#{@user.first_name} #{@user.last_name} just signed up for Storkypics" %></p>
+
+<p><%= User.all.count %> users signed up in total:</p>
+<ol>
+	<% User.find(:all, :order => "created_at desc").each do |user| %>
+		<li><%= "#{user.first_name} #{user.last_name} <#{user.email}>" %></li>
+	<% end %>
+</ol>
