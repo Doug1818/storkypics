@@ -79,7 +79,8 @@
 <p>
 	<span style="font-weight:bold;"><%= "#{current_user.first_name} #{current_user.last_name}" %></span><br>
 	<%= current_user.address %><br>
-	<%= "#{current_user.city}, #{current_user.state}, #{current_user.zip_code}" %>
+	<%= "#{current_user.city}, #{current_user.state}, #{current_user.zip_code}" %><br>
+	<%= current_user.country %>
 </p>
 <div style="margin-top:10px;" class="links">
 	<%= link_to "Edit", edit_user_registration_path(current_user) %>
@@ -89,7 +90,8 @@
 	<p>
 		<span style="font-weight:bold;"><%= "#{sendee.first_name} #{sendee.last_name}" %></span><br>
 		<%= sendee.address %><br>
-		<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>
+		<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %><br>
+		<%= sendee.country %>
 	</p>
 	<div style="margin-top:10px;" class="links">
 		<%= link_to "Edit", edit_sendee_path(sendee) %> | 

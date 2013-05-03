@@ -6,7 +6,8 @@
 		<li>
 			<span style="font-weight:bold;"><%= "#{@user.first_name} #{@user.last_name}" %></span><br>
 			<%= @user.address %><br>
-			<%= "#{@user.city}, #{@user.state}, #{@user.zip_code}" %>
+			<%= "#{@user.city}, #{@user.state}, #{@user.zip_code}" %><br>
+			<%= @user.country %>
 		</li>
 	<% end %>
 	
@@ -14,7 +15,8 @@
 		<li>
 			<span style="font-weight:bold;"><%= "#{sendee.first_name} #{sendee.last_name}" %></span><br>
 			<%= sendee.address %><br>
-			<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %>	
+			<%= "#{sendee.city}, #{sendee.state}, #{sendee.zip_code}" %><br>
+			<%= sendee.country %>
 		</li>
 	<% end %>
 </ul>

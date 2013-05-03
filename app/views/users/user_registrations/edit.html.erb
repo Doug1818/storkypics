@@ -47,13 +47,17 @@
           <%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
         </div>
         <div style="float:left;">
-          <div class="flabel">State</div>
-          <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:133px;" %>
+          <div class="flabel">State/Province</div>
+          <%= f.text_field :state, style: "width:120px;font-size:110%;" %>
         </div>
       </div>
       <div style="clear:both;">
-        <div class="flabel">Zip Code</div>
+        <div class="flabel">Zip/Postal Code</div>
         <%= f.text_field :zip_code, required: true, style: "font-size:110%;" %>
+      </div>
+      <div style="float:left;margin-top:15px;">
+        <div class="flabel">Country</div>
+        <%= f.country_select :country, ["United States"], {}, {style: "width:285px;"} %>
       </div>
     </div>
   </div>

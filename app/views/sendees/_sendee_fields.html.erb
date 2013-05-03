@@ -14,25 +14,29 @@
 		    <div class="flabel">Relationship to Child</div>
 		    <%= f.select :relationship, Sendee::RELATIONSHIPS, { include_blank: true, required: true }, style: "width:288px;" %>
 			</div>
+			<div style="float:left;">
+				<div class="flabel">Address</div>
+				<%= f.text_field :address, required: true, style: "font-size:110%;" %>
+	    </div>
     </div>
 	</span>
 	<span class="span6">
-    <div style="float:left;">
-			<div class="flabel">Address</div>
-			<%= f.text_field :address, required: true, style: "font-size:110%;" %>
-    </div>
-    <div style="float:left;margin-bottom:15px;">
-			<div style="float:left;">
+		<div style="float:left;margin-bottom:15px;">
+	    <div style="float:left;">
 		    <div class="flabel">City</div>
-		    <%= f.text_field :city, required: true, style: "width:90px;margin-right:5px;font-size:110%;" %>
+		    <%= f.text_field :city, required: true, style: "width:120px;margin-right:17px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
-		    <div class="flabel">State</div>
-		    <%= f.select :state, User::STATES, { include_blank: true, required: true }, style: "width:100px;margin-right:5px" %>
+		    <div class="flabel">State/Province</div>
+		    <%= f.text_field :state, style: "width:120px;font-size:110%;" %>
 			</div>
 			<div style="float:left;">
-				<div class="flabel">Zip Code</div>
-				<%= f.text_field :zip_code, required: true, style: "width:60px;font-size:110%;" %>
+				<div class="flabel">Zip/Postal Code</div>
+				<%= f.text_field :zip_code, required: true, style: "font-size:110%;margin-right:25px;" %>
+	    </div>
+	    <div style="float:left;">
+				<div class="flabel">Country</div>
+				<%= f.country_select :country, ["United States"], {}, {style: "width:285px;"} %>
 	    </div>
     </div>
 	</span>

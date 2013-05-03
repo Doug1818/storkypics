@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :address,
-  	:city, :state, :zip_code, :children_attributes, :sendees_attributes, :new_order_path
+  	:city, :state, :zip_code, :country, :children_attributes, :sendees_attributes, :new_order_path
   # attr_accessible :title, :body
   attr_accessor :new_order_path
 
@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true
-  validate  :zip_code_length
+  #validate  :zip_code_length
+  validates :country, presence: true
 
   def zip_code_length
     if !self.zip_code.blank? && self.zip_code.length != 5

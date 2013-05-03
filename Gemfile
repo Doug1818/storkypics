@@ -15,6 +15,7 @@ gem 'meta_search'
 gem 'mail'
 gem 'figaro'
 gem 'gibbon'
+gem 'country_select'
 
 group :production do
   gem 'google-analytics-rails'
