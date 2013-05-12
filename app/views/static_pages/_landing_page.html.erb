@@ -7,6 +7,8 @@
 			<p>Share the story <em>of your</em> growing child <em>with your</em> closest friends & relatives... <span style="color: #f15e3e">seamlessly.</span></p></blockquote>
 		</div>
 	</div>
+
+	<div style="text-align:center;"><%= raw(youtube_embed('http://www.youtube.com/watch?v=CgdxEldODEU&feature=youtu.be')) %></div>
 	
 	<div id="container1">
 	
@@ -14,7 +16,7 @@
 			<p>Have Kids? Take Pics?</p>
 			<h1 style="margin: 10px 0;"><%= link_to "Sign up", new_user_registration_path, style: "margin: 10px 0;text-decoration:none;" %> now!</h1><div id="blue-lines" style="position:relative;bottom:27px;"></div>
 			<p style="margin-bottom:15px;">
-				Want to help us out? Take our <%= link_to "survey", "https://www.surveymonkey.com/s/DXF9Z8G", target: "_blank" %>
+				The next 50 orders will include a FREE <%= render 'shared/bib_promotion_modal' %>
 			</p>
 		</div>
 
